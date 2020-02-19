@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0; 
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+}
+
+.container{
+    margin: 0 auto;
+    width: 1020px;
+    padding: 40px;
+}
+
+.portfolio{
+    width: 100%;
+}
+
+.img-for-portfolio{
+    width: 220px;
+    height: 187px;
+}
