@@ -17,15 +17,17 @@ body {
 
 .portfolio {
     width: 100%;
-    height: calc(864px - 80px);
+    height: calc(864px);
     background-color: #2d303a;
 }
 
 .portfolio .container{
     display: flex;
     flex-direction: column;
-    padding-top:  10px;
-    padding-bottom: 15px;
+    position: relative;
+    left: 40px;
+    padding-top:  50px;
+    padding-bottom: 55px;
 }
 
 .portfolio h2 {
