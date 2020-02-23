@@ -12,6 +12,7 @@ body {
 .container {
     margin: 0 auto;
     width: 1020px;
+    max-width: 1020px;
     height: 100%;
 }
 
@@ -19,6 +20,7 @@ body {
     width: 100%;
     height: calc(864px);
     background-color: #2d303a;
+    border-bottom: #323746 solid 6px;
 }
 
 .portfolio .container{
@@ -30,7 +32,7 @@ body {
     padding-bottom: 55px;
 }
 
-.portfolio h2 {
+h2 {
     position: relative;
     top: 11px;
 
@@ -39,7 +41,7 @@ body {
     font-weight: 800;
 }
 
-.portfolio p{
+p{
     position: relative;
     top: 33px;
 
@@ -91,4 +93,21 @@ body {
 
 .portfolio .img-for-portfolio:nth-child(n+13){
     display: none;
+}
+
+.about-us{
+    background-color: #f2f2f2;
+    height: calc(734px- 80px);
+}
+
+.about-us .container{
+    padding: 40px;
+    direction: flex;
+    flex-direction: column; 
+}
+
+.staff{
+    display: grid;
+    grid-gap: 20px;
+    grid-template: 443px / repeat(3, 300px);
 }
