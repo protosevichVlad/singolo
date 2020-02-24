@@ -11,7 +11,8 @@ body {
 
 .container {
     margin: 0 auto;
-    width: 1020px;
+    padding: 0 40px;
+    width: calc(1020px - 80px);
     max-width: 1020px;
     height: 100%;
 }
@@ -24,7 +25,6 @@ body {
 }
 
 .portfolio .container{
-    width: calc(100% - 80px);
 
     display: flex;
     flex-direction: column;
@@ -73,11 +73,14 @@ p{
     color: #666d89;
     font-size: 12px;
     font-weight: 400;
+
+    transition: all 0.5s ease;
 }
 
 .portfolio li:hover{
     color: #c5c5c5;
-    border-color: #c5c5c5;
+    border-color: #c5c5c5; 
+    cursor: pointer;
 }
 
 .images {
@@ -105,9 +108,7 @@ p{
 
 .about-us .container{
     height: calc(100% - 80px);
-    width: calc(100% - 60px);
     padding: 40px;
-    padding-right: 20px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -144,6 +145,7 @@ p{
 
 .staff > div > h3{
     letter-spacing: -0.4px;
+    white-space: nowrap;
 }
 
 .staff > div > p{
@@ -156,4 +158,10 @@ p{
 
 .staff > div  img{
     padding-right: 5px;
+}
+
+.social-media  img:hover{
+    position: relative;
+    top: 5px;
+    cursor: pointer;
 }
