@@ -1,10 +1,10 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
     width: 100%;
     color: #f0d8d9;
 }
@@ -23,27 +23,90 @@ body {
 
 
 .get-a-quote .wrapper{
-    height: 100%;
+    padding: 60px 0;
+    height: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.grid-for-form-and-aside{
+
+
+
+
+
+.get-a-quote .grid-for-form-and-aside{
+    position: relative;
+    top: -1px;
     display: grid;
-    grid-template: 400px / 620px 300px;
+    grid-template: 400px / 619px 300px;
     grid-gap: 20px;
 
 }
 
-h2 {
+.get-a-quote h2 {
     position: relative;
-    top: 11px;
+    top: -1px;
 
     font-size: 30px;
-    letter-spacing: -0.1px;
-    font-weight: 800;
+    letter-spacing: -0.18px;
+    font-weight: 900;
 }
 
-form{
+.get-a-quote p{
+    position: relative;
+    top: -15px;
+
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.15px;
+
+}
+
+.get-a-quote form{
     display: flex;
     flex-direction: column;
+}
+
+.get-a-quote input{
+    height: 7px;
+    padding: 15px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    
+    background-color: #d6564f;
+
+    border: 0px solid black;
+    border-radius: 5px;
+
+    font-size: 11px;    
+}
+
+.get-a-quote textarea{
+    height: 180px;
+    padding: 11px 15px;
+    margin-bottom: 16px;
+    
+    background-color: #d6564f;
+
+    border: 0px solid black;
+    border-radius: 5px;
+
+    font-size: 11px;
+    font-weight: 400; 
+
+    resize: none;
+}
+
+textarea::placeholder{
+    color: #f48c8f;
+    letter-spacing: 0.45px;
+}
+
+input::placeholder{
+    color: #f48c8f;
+    letter-spacing: 0.7px;
+    font-weight: 400;
 }
 
 
@@ -62,7 +125,7 @@ footer .wrapper{
 
 footer img{
     position: relative;
-    left: 1px;
+    left: 0px;
     top: 1px;
     margin-left: 5px;
 }
