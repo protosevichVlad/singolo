@@ -85,7 +85,7 @@ body {
 .get-a-quote textarea{
     height: 180px;
     padding: 11px 15px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     
     background-color: #d6564f;
 
@@ -109,6 +109,92 @@ input::placeholder{
     font-weight: 400;
 }
 
+button{
+    height: 25px;
+    
+    background-color: #d6564f;
+
+    border: 3px solid #d6564f;
+    border-radius: 5px;
+
+    font-size: 15px; 
+    color: #f0d8d9;
+}
+
+.get-a-quote aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.get-a-quote aside h4{
+    position: relative;
+    top: -2px;
+    left: 1px;
+    margin-bottom: 21px; 
+
+    letter-spacing: 0.1px;
+    font-size: 18px;
+}
+
+.get-a-quote aside p{
+    margin-bottom: 5px; 
+
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.03px;
+    font-size: 12px;
+}
+
+.get-a-quote aside li{
+    list-style: none;
+    margin-bottom: 2px;
+}
+
+.get-a-quote aside a{
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 400px;
+    letter-spacing: 0.45px;
+    color:  #f0d8d9
+}
+
+.get-a-quote aside img{
+   margin-right: 10px;
+}
+
+.get-a-quote .address{
+    position: relative;
+    left: 4px;
+}
+
+.get-a-quote .address a{
+    position: relative;
+    left: 3px;
+    top: -1px;
+}
+
+.get-a-quote .tel{
+    position: relative;
+    left: 2px;
+}
+
+.get-a-quote .tel a{
+    position: relative;
+    left: 1px;
+    top: -1px;
+}
+
+.get-a-quote .mail{
+    position: relative;
+    left: 1px;
+    top: 1px;
+}
+
+.get-a-quote .mail a{
+    position: relative;
+    top: -1px;
+}
 
 footer{
     height: 76px;
@@ -137,7 +223,12 @@ footer span{
     letter-spacing: -0.11px;
     font-size: 12px;
 }
+
 footer img:last-child{
     position: relative;
     left: 0px;
+}
+
+footer img:hover{
+    cursor: pointer;
 }
