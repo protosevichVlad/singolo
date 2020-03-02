@@ -77,6 +77,11 @@ p{
     transition: all 0.5s ease;
 }
 
+.portfolio li:nth-child(1){
+    color: #c5c5c5;
+    border-color: #c5c5c5 
+}
+
 .portfolio li:hover{
     color: #c5c5c5;
     border-color: #c5c5c5; 
