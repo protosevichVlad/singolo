@@ -266,6 +266,7 @@ nav a:hover{
 .services h2{
     position: relative;
     top: 3px;
+
     font-size: 30px;
     color: #666d89;
     font-weight: 900;
@@ -274,12 +275,13 @@ nav a:hover{
 
 .services h4{
     position: relative;
-    top: -12px;
+    top: -10px;
 
     letter-spacing: 0.36px;
     line-height: 30px;
     font-size: 17px;
     color: #767e9e;
+    text-align: justify;
     font-weight: 400;
 }
 
@@ -311,6 +313,9 @@ nav a:hover{
 }
 
 .services .block h5{
+    position: relative;
+    top: -2px;
+    
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 
@@ -319,7 +324,9 @@ nav a:hover{
     font-size: 12px;
     word-wrap: break-word;
     font-weight: 700;
-    letter-spacing: 0.1px;
+    letter-spacing: -0.11px;
+    text-align: justify;
+    overflow: hidden;
 }
 
 .services .block .image{
@@ -390,7 +397,8 @@ p{
     top: 33px;
 
     font-size: 18px;
-    letter-spacing: -0.23px;     
+    letter-spacing: -0.23px;
+    text-align: justify;
 }
 
 .portfolio ul{
@@ -490,7 +498,7 @@ p{
     position: relative;
     top: -18px;
     line-height: 30px;
-    letter-spacing: -0.05px;
+    letter-spacing: -0.24px;
 }
 
 .about-us .staff{
@@ -501,14 +509,17 @@ p{
 .staff > div > h3{
     letter-spacing: -0.4px;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .staff > div > p{
     position: relative;
     top: -4px;
     font-size: 12px;
-    letter-spacing: -0.1px;
     line-height: 20px;
+    letter-spacing: -0.05px;
+    text-align: justify;   
 }
 
 .staff > div  img{
@@ -547,7 +558,6 @@ body {
     border-bottom: 6px solid #ea676b;
 }
 
-
 .get-a-quote .wrapper{
     padding: 60px 0;
     height: calc(100% - 90px);
@@ -555,10 +565,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
-
-
-
-
 
 .get-a-quote .grid-for-form-and-aside{
     position: relative;
@@ -586,8 +592,6 @@ body {
     line-height: 30px;
     font-size: 18px;
     font-weight: 300;
-    letter-spacing: -0.1px;
-
 }
 
 .get-a-quote form{
