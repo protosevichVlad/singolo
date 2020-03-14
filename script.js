@@ -13,6 +13,50 @@ for(let i = 0; i < a_anchors.length; i++){
     a_anchors[i].onclick = change_color_text_header;
 }
 
+//--------------------------------SLIDER-----------------------------------------------------
+
+function click_on_chev(){
+    if(slider_1){
+        iphones.style = 'background: url(assets/slider-2.png);height: 513px;'
+        iphone.forEach(elem => elem.style = 'display: none');
+        slider.style = 'background-color: #648bf0; border-bottom: 6px solid #74b9ff';
+        slider_1 = false
+    }else{
+        iphones.style = '';
+        iphone.forEach(elem => elem.style = '');
+        slider.style = '';
+        slider_1 = true;
+    }
+}
+
+function chlick_on_iphone(){
+    let style_for_screen = 'background: #000';
+    let this_iphone = Array.from(this.getElementsByClassName('screen-iphone'))[0];
+    if(this_iphone.style.length){
+        this_iphone.style = '';
+    }else{
+        this_iphone.style = style_for_screen;
+    }
+}
+
+let iphones = Array.from(document.getElementsByClassName('iphones'))[0];
+let slider = Array.from(document.getElementsByClassName('slider'))[0];
+let iphone = Array.from(document.getElementsByClassName('iphone'));
+iphone.forEach(elem => elem.onclick = chlick_on_iphone)
+
+let slider_1 = true;
+
+//iphones
+// background: url(assets/slider-2.png);
+// height: 513px;
+
+//iphone
+//  display: none
+
+//slider
+    // backgroundColor: #648bf0
+        
+
 //--------------------------------PORTFOLIO--------------------------------------------------
 
 function change_color_text_portfolio(){
