@@ -7,19 +7,20 @@
     <title>SINGOLO</title>
 </head>
 <body>
+    <div id="home"></div>
     <header>
         <div class="container">
             <h1>SINGOLO<span>*</span></h1>
-            <nav>
-                <a href="#">HOME</a>
+            <nav id="header-n">
+                <a href="#home">HOME</a>
                 <spnan>·</spnan>
-                <a href="#">SERVICES</a>
+                <a href="#services">SERVICES</a>
                 <spnan>·</spnan>
-                <a href="#">PORTFOLIO</a>
+                <a href="#portfolio">PORTFOLIO</a>
                 <spnan>·</spnan>
-                <a href="#">ABOUT</a>
+                <a href="#about-us">ABOUT</a>
                 <spnan>·</spnan>
-                <a href="#">CONTACT</a>
+                <a href="#get-a-quote">CONTACT</a>
             </nav>
         </div>
     </header>
@@ -55,6 +56,7 @@
             </div>  
         </div>          
     </div>
+    <div id="services" class="anchors"></div>
     <div class="services">
         <div class="container">        
             <h2>Our Services</h2>
@@ -93,17 +95,18 @@
             </div>
         </div>
     </div>
+    <div id="portfolio" class="anchors"></div>
     <div class="portfolio">
         <div class="container">
             <h2>Portfolio</h2>
             <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-            <ul>
+            <ul id="portfolio-tags">
                 <li>All</li>
                 <li>Web Design</li>
                 <li>Graphic Design</li>
                 <li>Artwork</li>
             </ul>
-            <div class="images">
+            <div class="images" id="portfolio-images">
                 <img src="assets/image_1.svg" alt="image 1" class="img-for-portfolio">
                 <img src="assets/image_2.svg" alt="image 2" class="img-for-portfolio">
                 <img src="assets/image_3.svg" alt="image 3" class="img-for-portfolio">
@@ -116,10 +119,10 @@
                 <img src="assets/image_10.svg" alt="image 10" class="img-for-portfolio">
                 <img src="assets/image_11.svg" alt="image 11" class="img-for-portfolio">
                 <img src="assets/image_12.svg" alt="image 12" class="img-for-portfolio">
-                <img src="assets/image_12.svg" alt="image 12" class="img-for-portfolio">
             </div>
         </div>
     </div>
+    <div id="about-us" class="anchors"></div>
     <div class="about-us">
         <div class="container">
             <h2>About Us</h2>
@@ -161,7 +164,7 @@
             </div>
         </div>
     </div>
-    <div class="get-a-quote">
+    <div id="get-a-quote" class="get-a-quote">
         <div class="wrapper">
             <h2>Get a Quote</h2> 
             <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -196,5 +199,7 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
+
 </body>
 </html>
