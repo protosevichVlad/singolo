@@ -618,6 +618,9 @@ body {
     border-radius: 5px;
 
     font-size: 11px;    
+    color:#f0d8d9;
+    letter-spacing: 0.7px;
+    font-weight: 400;
 }
 
 .get-a-quote textarea{
@@ -630,7 +633,9 @@ body {
     border: 0px solid black;
     border-radius: 5px;
 
-    font-size: 11px;
+    font-size: 11px;    
+    color:#f0d8d9;
+    letter-spacing: 0.7px;
     font-weight: 400; 
 
     resize: none;

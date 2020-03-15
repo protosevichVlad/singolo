@@ -45,17 +45,7 @@ let iphone = Array.from(document.getElementsByClassName('iphone'));
 iphone.forEach(elem => elem.onclick = chlick_on_iphone)
 
 let slider_1 = true;
-
-//iphones
-// background: url(assets/slider-2.png);
-// height: 513px;
-
-//iphone
-//  display: none
-
-//slider
-    // backgroundColor: #648bf0
-        
+     
 
 //--------------------------------PORTFOLIO--------------------------------------------------
 
@@ -95,3 +85,34 @@ let parent_images = document.getElementById("portfolio-images");
 tags_portfolio.forEach(element => element.onclick = change_color_text_portfolio);
 
 img_form_portfolio.forEach(element => element.onclick = change_border_image_portfolio);
+
+//----------------------------get-a-quote------------------------------------
+
+function sumbmit_form(){
+    let subject_message = subject.value == '' ? 'Без темы' : 'Тема: ' + subject.value;
+    let discribe_message = discribe.value == '' ? 'Без описания' : 'Описание: ' + discribe.value;
+
+    document.body.insertAdjacentHTML('beforeend',
+                                '<div id="message" style="position: fixed; top:0px; left:0px; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 11; display: flex; justify-content: center; align-items: center; "> ' +
+                                    '<div class="content" style="padding:40px; background-color: white; border-radius: 10px; width: 500px; height: 200px; display: flex; flex-direction: column; justify-content: space-around; align-items: center; color: black">' +   
+                                        '<h3>Письмо отправлено</h3>'+
+                                        '<h4>' + subject_message + '</h4>'+
+                                        '<p style="position: relative; top:0px;">' + discribe_message + '</p>'+
+                                        '<button onclick="message_button_click()"style="width: 100px">OK</button>'+
+                                    '</div>'+
+                                '</div>');
+    return false;
+}
+
+function message_button_click(){
+    name.value = '';
+    email.value = '';
+    subject.value = '';
+    discribe.value = '';
+    document.body.removeChild(document.getElementById('message'));
+}
+
+let name = document.getElementById('f-name');
+let email = document.getElementById('f-email');
+let subject = document.getElementById('f-subject');
+let discribe = document.getElementById('f-discribe');

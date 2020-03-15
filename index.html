@@ -164,16 +164,17 @@
             </div>
         </div>
     </div>
-    <div id="get-a-quote" class="get-a-quote">
+    <div id="get-a-quote" class="anchors"></div>
+    <div class="get-a-quote">
         <div class="wrapper">
             <h2>Get a Quote</h2> 
             <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
             <div class="grid-for-form-and-aside">
-                <form>
-                    <input type="text" name="name" placeholder="Name(Required)" required>
-                    <input type="email" name="email" placeholder="Email(Required)" required>
-                    <input type="text" name="subject" placeholder="Subject">
-                    <textarea name="discribe" placeholder="Describe your project in detail..."></textarea>
+                <form  onsubmit="return sumbmit_form()" >
+                    <input type="text" name="name" id="f-name" placeholder="Name(Required)" required>
+                    <input type="email" name="email" id="f-email" placeholder="Email(Required)" required>
+                    <input type="text" name="subject" id="f-subject" placeholder="Subject">
+                    <textarea name="discribe" id="f-discribe" placeholder="Describe your project in detail..."></textarea>
                     <button type="submit">Submit</button>
                 </form>
                 <aside>
