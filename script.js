@@ -42,7 +42,9 @@ function chlick_on_iphone(){
 let iphones = Array.from(document.getElementsByClassName('iphones'))[0];
 let slider = Array.from(document.getElementsByClassName('slider'))[0];
 let iphone = Array.from(document.getElementsByClassName('iphone'));
-iphone.forEach(elem => elem.onclick = chlick_on_iphone)
+let iphone_corpus = Array.from(document.getElementsByClassName('iphone-corpus'));
+
+iphone_corpus.forEach(elem => elem.onclick = chlick_on_iphone)
 
 let slider_1 = true;
      
