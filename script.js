@@ -1,32 +1,82 @@
 //----------------------------------------HEADER----------------------------------------------
+window.addEventListener('scroll', onScroll);
+window.onload = onScroll;
 
-function change_color_text_header(){
-    a_anchors.forEach(item=>item.style.color = "#ffffff");
-    this.style.color = "#f06c64";
+function onScroll(){
+    let currentPosition = window.scrollY;
+    let heder_size = document.querySelector('header').offsetHeight;
+    let divs = document.querySelectorAll('body>div');
+    let navigation = document.querySelectorAll('#header-n>a');
+
+    divs.forEach((el)=>{
+        if(el.offsetTop - heder_size  <= currentPosition && (el.offsetTop + el.offsetHeight) > currentPosition){
+            navigation.forEach((a)=>{
+                a.classList.remove('active_nav');
+                if(a.getAttribute('href').substring(1) === el.getAttribute('id')){
+                    a.classList.add('active_nav');   
 }
+            })
+        }
+    });
 
-let a_anchors = Array.from(document.getElementById("header-n").getElementsByTagName('a'));
-let save_index_red_text = 0;
-a_anchors[0].style.color = "#f06c64";
-
-for(let i = 0; i < a_anchors.length; i++){
-    a_anchors[i].onclick = change_color_text_header;
 }
 
 //--------------------------------SLIDER-----------------------------------------------------
 
-function click_on_chev(){
+function animation(dir){
+    animation_is_running = true;
+    let delay = 30;
+    let i = -2;
+    let j = 42;
+    let array_starts = iphones.map(iphone => iphone.style.left);
+    setTimeout(function run(){
+        i += j;
+        j--;
+        iphones.forEach((iphone, index) => {
+            iphone.style.left = parseInt(array_starts[index]) + i * dir + 'px'
+        });
+        if(i < 880) {
+            setTimeout(run, delay);
+        }else{
+            animation_is_running = false;
+        }
+    }, delay);
+}
+
+function click_on_left_chev(){
+    if(animation_is_running) return; 
     if(slider_1){
-        iphones.style = 'background: url(assets/slider-2.png);height: 513px;'
-        iphone.forEach(elem => elem.style = 'display: none');
-        slider.style = 'background-color: #648bf0; border-bottom: 6px solid #74b9ff';
-        slider_1 = false
+        iphones[2].style.left = '-1220px';
+        // slider.style.backgroundColor = '#648bf0';
+        slider.classList.add('slider-2-background');
+        animation(1);
     }else{
-        iphones.style = '';
-        iphone.forEach(elem => elem.style = '');
-        slider.style = '';
-        slider_1 = true;
+        iphones[0].style.left = '-880px';
+        iphones[1].style.left = '-687px';
+        slider.classList.remove('slider-2-background');        
+        animation(1);
+        
     }
+
+    
+    slider_1 = !slider_1;
+    
+}
+
+function click_on_right_chev(){
+    if(animation_is_running) return; 
+    if(slider_1){
+        iphones[2].style.left = '540px';
+        slider.classList.add('slider-2-background');
+        animation(-1);
+    }else{
+        iphones[0].style.left = '880px';
+        iphones[1].style.left = '1073px';
+        slider.classList.remove('slider-2-background');
+        animation(-1);
+    }
+    slider_1 = !slider_1;
+
 }
 
 function chlick_on_iphone(){
@@ -39,25 +89,27 @@ function chlick_on_iphone(){
     }
 }
 
-let iphones = Array.from(document.getElementsByClassName('iphones'))[0];
-let slider = Array.from(document.getElementsByClassName('slider'))[0];
-let iphone = Array.from(document.getElementsByClassName('iphone'));
+let iphones_d = document.querySelector("body > div.slider > div > div.iphones");
+let slider = document.querySelector("body > div.slider");
+let iphones = Array.from(document.getElementsByClassName('iphone'));
 let iphone_corpus = Array.from(document.getElementsByClassName('iphone-corpus'));
 
 iphone_corpus.forEach(elem => elem.onclick = chlick_on_iphone)
+iphones.push(document.querySelector('img.slider-2'))
+iphones.forEach(iphone => iphone.style.left = window.getComputedStyle(iphone).left);
 
 let slider_1 = true;
-     
+let animation_is_running = false     
 
 //--------------------------------PORTFOLIO--------------------------------------------------
 
 function change_color_text_portfolio(){
+    if('active_tag' == this.classList[0]) return;
     tags_portfolio.forEach(function(item){
-        item.style.color = "#666d89";
-        item.style.borderColor = "#666d89";
+        item.classList.remove('active_tag');
     });
-    this.style.color = "#c5c5c5";
-    this.style.borderColor  = '#c5c5c5';
+    this.classList.add('active_tag');
+
 
     let temp = img_form_portfolio[0].cloneNode();
     temp.onclick = change_border_image_portfolio;
@@ -68,16 +120,9 @@ function change_color_text_portfolio(){
 
 function change_border_image_portfolio(){
     img_form_portfolio.forEach(function(item){
-        item.style.borderWidth= "0px";
-        item.style.left = "0px";
-        item.style.top = "0px";
+        item.classList.remove('active_image');
     });
-    console.log('asdasd');
-
-
-    this.style.borderWidth = "5px";
-    this.style.left = "-5px";
-    this.style.top = "-5px";
+    this.classList.add('active_image');
 }
 
 let img_form_portfolio = Array.from(document.getElementsByClassName('img-for-portfolio'));
@@ -107,14 +152,12 @@ function sumbmit_form(){
 }
 
 function message_button_click(){
-    name.value = '';
-    email.value = '';
-    subject.value = '';
-    discribe.value = '';
-    document.body.removeChild(document.getElementById('message'));
+    form.reset();
+    document.body.removeChild(document.querySelector('#message'));
 }
 
-let name = document.getElementById('f-name');
-let email = document.getElementById('f-email');
-let subject = document.getElementById('f-subject');
-let discribe = document.getElementById('f-discribe');
+let name = document.querySelector('#f-name');
+let email = document.querySelector('#f-email');
+let subject = document.querySelector('#f-subject');
+let discribe = document.querySelector('#f-discribe');
+let form = document.querySelector('form');
