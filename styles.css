@@ -334,6 +334,7 @@ img.slider-2{
 .services .block h3{
     position: relative;
     top: -3px;
+    width: 100%;
 
     color: #666d89;
     letter-spacing: -0.5px;
@@ -345,6 +346,8 @@ img.slider-2{
 .services .block h5{
     position: relative;
     top: -2px;
+    width: 100%;
+    
     
     grid-column: 2 / 3;
     grid-row: 2 / 3;
@@ -475,8 +478,8 @@ p{
 
 .img-for-portfolio {
     position: relative;
-    width: 220px;
-    height: 187px;
+    width: 100%;
+    height: 100%;
     border: 0px solid #f06c64;
 }
 
@@ -507,9 +510,10 @@ p{
 }
 
 .staff > div{
-    display: grid;
-    grid-template: 300px 20px 46px 32px/ 300px;
-    grid-gap: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 3px;
 }
 
 .staff .second img {
@@ -532,9 +536,18 @@ p{
 .about-us .staff{
     position: relative;
     top: -27px;
+    left: -3px;
+}
+
+.staff .social-media{
+    position: relative;
+    top: 4px;
 }
 
 .staff > div > h3{
+    margin-top: 15px;
+    margin-bottom: 15px;
+
     letter-spacing: -0.4px;
     white-space: nowrap;
     overflow: hidden;
@@ -543,14 +556,16 @@ p{
 
 .staff > div > p{
     position: relative;
-    top: -4px;
+    height: 60px;
+    top: 0px;
     font-size: 12px;
     line-height: 20px;
     letter-spacing: -0.05px;
     text-align: justify;   
 }
 
-.staff > div  img{
+.staff > div .social-media img{
+    margin-top: 15px;
     padding-right: 5px;
 }
 
@@ -834,27 +849,85 @@ footer img:hover{
 
 @media (max-width: 1019px){
     
+    .slider .container{
+        width: calc(100% - 80px);
+    }
+
+    .iphone{
+        width: 100%;
+    }
+
+    .iphones{
+        width: calc(100% - 60px);
+    }
+
+    .iphone{
+    }
+    
+    .shadow-iphone{
+
+    }
+
+    .iphone-corpus{
+        
+
+    }
+    
+    .screen-iphone {
+       
+
+        background-repeat: no-repeat;
+       
+    }
+
     .container{
-        max-width: 768px;
+        /* max-width: 688px; */
+        width: calc(100% - 80px);
     }
 
     .services{
-        height: 571px;
+        height: 651px;
+    }
+
+    .services .container{
+        width: calc(100% - 80px);
     }
 
     .services .wrapper{
-        grid-template: repeat(3, 104px) / repeat(2, 300px);
+        grid-template: repeat(3, 104px) / repeat(2, 40vw);
+        grid-gap: calc(5vw)
     }
 
     .portfolio{
-        height: 1102px;
+        height: 140vw;
     }
 
     .images {
-        grid-template: repeat(4, 187px) / repeat(3, 220px);
+        grid-template: repeat(4, calc((32vw - 80px)))/ repeat(3, 30%);
+        grid-gap: calc(10% / 2)
     }
 
     .staff{
-        grid-template: 443px / repeat(3, 300px);
+        grid-template: 443px / repeat(3, 32%);
+        grid-gap: calc(4% / 2);
+    }
+
+    .staff > div > img{
+        width: 100%;
+    }
+
+    .staff > div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .get-a-quote .wrapper{
+        width: calc(100% - 40px);
+        
+    }
+
+    .get-a-quote .grid-for-form-and-aside{
+        grid-template: 400px / 60% 35%;
+        grid-gap: 5%;
     }
 }

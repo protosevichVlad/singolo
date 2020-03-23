@@ -33,7 +33,7 @@ function animation(dir){
         i += j;
         j--;
         iphones.forEach((iphone, index) => {
-            iphone.style.left = parseInt(array_starts[index]) + i * dir + 'px'
+            iphone.style.left = parseInt(array_starts[index]) + i * dir + 'px';
         });
         if(i < 880) {
             setTimeout(run, delay);
