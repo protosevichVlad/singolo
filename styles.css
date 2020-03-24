@@ -479,7 +479,6 @@ p{
 .img-for-portfolio {
     position: relative;
     width: 100%;
-    height: 100%;
     border: 0px solid #f06c64;
 }
 
@@ -874,10 +873,7 @@ footer img:hover{
     }
     
     .screen-iphone {
-       
-
         background-repeat: no-repeat;
-       
     }
 
     .container{
@@ -889,27 +885,32 @@ footer img:hover{
         height: 651px;
     }
 
+    .services .block{
+        margin: auto;
+    }
+
     .services .container{
         width: calc(100% - 80px);
     }
 
     .services .wrapper{
-        grid-template: repeat(3, 104px) / repeat(2, 40vw);
-        grid-gap: calc(5vw)
+        grid-template: repeat(3, 104px) / repeat(2, 1fr);
+        grid-gap: 50px;
+        width: 100%;
     }
 
     .portfolio{
-        height: 140vw;
+        height: auto;
     }
 
     .images {
-        grid-template: repeat(4, calc((32vw - 80px)))/ repeat(3, 30%);
-        grid-gap: calc(10% / 2)
+        grid-template: repeat(4, 1fr)/ repeat(3, 1fr);
+        padding-bottom: 40px;
     }
 
     .staff{
-        grid-template: 443px / repeat(3, 32%);
-        grid-gap: calc(4% / 2);
+        grid-template: 443px / repeat(3, 1fr);
+        grid-gap: 14.6px;
     }
 
     .staff > div > img{
@@ -927,7 +928,82 @@ footer img:hover{
     }
 
     .get-a-quote .grid-for-form-and-aside{
-        grid-template: 400px / 60% 35%;
-        grid-gap: 5%;
+        grid-template:  1fr / 2fr 1fr;
     }
+
+    footer .wrapper{
+        width: calc(100% - 80px);
+    }
+}
+
+
+@media (max-width: 767px){
+
+    header .container{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    header nav{
+        display: none;
+    }
+
+    header h1{
+        position: static;
+        margin: auto;
+        padding: 0;
+    }
+
+    .services .wrapper{
+        
+        grid-template: repeat(6, 104px) / 1fr;
+        grid-gap: 10px;
+    }
+    
+    h4{
+        margin: 20px 0;
+    }
+
+    .services{
+        height: auto;
+    }
+
+    .images {
+        grid-template: repeat(6, 1fr)/ repeat(2, 1fr);
+        grid-gap: 13px;
+    }
+
+    .staff{
+        grid-template: repeat(3, 1fr) / 1fr;
+    }
+
+    .about-us{
+        height: auto;
+    }
+
+    .about-us .container > p{
+        top:0;
+        margin: 40px 0;
+    }
+
+    .staff > div >p{
+        height: 40px;
+    }
+
+    .get-a-quote{
+        height: auto;
+    }
+
+    .get-a-quote h2 + p{
+        top: 0;
+        margin: 10px 0;
+    }
+
+    .get-a-quote .grid-for-form-and-aside{
+        grid-template: 3fr 2fr / 1fr;
+    }
+}
+
+@media (max-width: 374px){
+
 }
