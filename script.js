@@ -140,8 +140,8 @@ function sumbmit_form(){
     let discribe_message = discribe.value == '' ? 'Без описания' : 'Описание: ' + discribe.value;
 
     document.body.insertAdjacentHTML('beforeend',
-                                '<div id="message" style="position: fixed; top:0px; left:0px; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 11; display: flex; justify-content: center; align-items: center; "> ' +
-                                    '<div class="content" style="padding:40px; background-color: white; border-radius: 10px; width: 500px; height: 200px; display: flex; flex-direction: column; justify-content: space-around; align-items: center; color: black">' +   
+                                '<div id="message"> ' +
+                                    '<div class="content">' +   
                                         '<h3>Письмо отправлено</h3>'+
                                         '<h4>' + subject_message + '</h4>'+
                                         '<p style="position: relative; top:0px;">' + discribe_message + '</p>'+
