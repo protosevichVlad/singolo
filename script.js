@@ -21,21 +21,42 @@ function onScroll(){
 
 }
 
+let bg_menu_open = false;
+let bg_botton = document.querySelector("body > header > div.container > div")
+let bg_menu = document.querySelector("body > header > div.menu-bg")
+
+bg_botton.addEventListener('click', (event)=>{
+    if(bg_menu_open){
+        bg_botton.classList.remove('burger-button-open');
+        bg_menu.classList.remove('menu-bg-open');
+    }else{
+        bg_botton.classList.add('burger-button-open');
+        bg_menu.classList.add('menu-bg-open');
+    }
+    bg_menu_open = !bg_menu_open;
+});
+
+document.querySelector("body > header > div.menu-bg").addEventListener('click', (event) => {
+    if(bg_menu_open){
+        bg_botton.classList.remove('burger-button-open');
+        bg_menu.classList.remove('menu-bg-open');
+        bg_menu_open = !bg_menu_open;
+    }
+});
+
 //--------------------------------SLIDER-----------------------------------------------------
 
 function animation(dir){
     animation_is_running = true;
     let delay = 30;
-    let i = -2;
-    let j = 42;
+    let i = 0;
     let array_starts = iphones.map(iphone => iphone.style.left);
     setTimeout(function run(){
-        i += j;
-        j--;
+        i += 20;
         iphones.forEach((iphone, index) => {
             iphone.style.left = parseInt(array_starts[index]) + i * dir + 'px';
         });
-        if(i < 880) {
+        if(i < width_iphones) {
             setTimeout(run, delay);
         }else{
             animation_is_running = false;
@@ -66,12 +87,12 @@ function click_on_left_chev(){
 function click_on_right_chev(){
     if(animation_is_running) return; 
     if(slider_1){
-        iphones[2].style.left = '540px';
+        iphones[2].style.left = start_position_third + 'px';
         slider.classList.add('slider-2-background');
         animation(-1);
     }else{
-        iphones[0].style.left = '880px';
-        iphones[1].style.left = '1073px';
+        iphones[0].style.left = width_iphones + 'px';
+        iphones[1].style.left = (width_iphones + start_position_second) + 'px';
         slider.classList.remove('slider-2-background');
         animation(-1);
     }
@@ -92,11 +113,15 @@ function chlick_on_iphone(){
 let iphones_d = document.querySelector("body > div.slider > div > div.iphones");
 let slider = document.querySelector("body > div.slider");
 let iphones = Array.from(document.getElementsByClassName('iphone'));
+let width_iphones = parseInt(iphones_d.offsetWidth);
 let iphone_corpus = Array.from(document.getElementsByClassName('iphone-corpus'));
 
 iphone_corpus.forEach(elem => elem.onclick = chlick_on_iphone)
 iphones.push(document.querySelector('img.slider-2'))
 iphones.forEach(iphone => iphone.style.left = window.getComputedStyle(iphone).left);
+
+let start_position_second = parseInt(iphones[1].style.left); 
+let start_position_third = parseInt(iphones[2].style.left);
 
 let slider_1 = true;
 let animation_is_running = false     
