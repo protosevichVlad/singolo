@@ -64,40 +64,45 @@ function animation(dir){
     }, delay);
 }
 
+function edit_start_data(){
+    width_iphones = parseInt(iphones_d.offsetWidth);    
+    iphones.forEach(iphone => iphone.style = '');
+    iphones.forEach(iphone => iphone.style.left = window.getComputedStyle(iphone).left);
+    start_position_first_iphone = parseInt(iphones[0].style.left);
+    start_position_second_iphone = parseInt(iphones[1].style.left); 
+    start_position_third_iphone = parseInt(iphones[2].style.left);
+}
+
 function click_on_left_chev(){
     if(animation_is_running) return; 
     if(slider_1){
-        iphones[2].style.left = '-1220px';
+        iphones[2].style.left = (start_position_third_iphone - 2* width_iphones) + 'px';
         // slider.style.backgroundColor = '#648bf0';
         slider.classList.add('slider-2-background');
         animation(1);
     }else{
-        iphones[0].style.left = '-880px';
-        iphones[1].style.left = '-687px';
+        iphones[0].style.left = -width_iphones + start_position_first_iphone + 'px';
+        iphones[1].style.left = -width_iphones + start_position_second_iphone + 'px' ;
         slider.classList.remove('slider-2-background');        
         animation(1);
         
     }
-
-    
-    slider_1 = !slider_1;
-    
+    slider_1 = !slider_1;   
 }
 
 function click_on_right_chev(){
     if(animation_is_running) return; 
     if(slider_1){
-        iphones[2].style.left = start_position_third + 'px';
+        iphones[2].style.left = start_position_third_iphone + 'px';
         slider.classList.add('slider-2-background');
         animation(-1);
     }else{
-        iphones[0].style.left = width_iphones + 'px';
-        iphones[1].style.left = (width_iphones + start_position_second) + 'px';
+        iphones[0].style.left = width_iphones + start_position_first_iphone + 'px';
+        iphones[1].style.left = width_iphones + start_position_second_iphone + 'px';
         slider.classList.remove('slider-2-background');
         animation(-1);
     }
     slider_1 = !slider_1;
-
 }
 
 function chlick_on_iphone(){
@@ -120,11 +125,20 @@ iphone_corpus.forEach(elem => elem.onclick = chlick_on_iphone)
 iphones.push(document.querySelector('img.slider-2'))
 iphones.forEach(iphone => iphone.style.left = window.getComputedStyle(iphone).left);
 
-let start_position_second = parseInt(iphones[1].style.left); 
-let start_position_third = parseInt(iphones[2].style.left);
+let start_position_first_iphone = parseInt(iphones[0].style.left)
+let start_position_second_iphone = parseInt(iphones[1].style.left); 
+let start_position_third_iphone = parseInt(iphones[2].style.left);
 
 let slider_1 = true;
 let animation_is_running = false     
+
+
+
+
+window.matchMedia('(max-width: 1019px)').addListener(edit_start_data);
+window.matchMedia('(max-width: 767px)').addListener(edit_start_data);
+window.matchMedia('(max-width: 374px)').addListener(edit_start_data);
+
 
 //--------------------------------PORTFOLIO--------------------------------------------------
 

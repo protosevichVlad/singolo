@@ -294,6 +294,7 @@ nav a:hover{
 
 .iphones{
     width: 915px;
+    max-width: 800px;
     display: flex;
     justify-content: space-between;
     overflow: hidden;
@@ -314,6 +315,7 @@ nav a:hover{
 .iphone:nth-child(1){
     position: relative;
     top: 12px;
+    left: 1px;
 }
 
 img.slider-2{
@@ -346,6 +348,8 @@ img.slider-2{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
+
+    cursor: pointer;
 }
 
 .iphone:nth-child(2) .iphone-corpus{
@@ -979,6 +983,10 @@ footer img:hover{
         padding: 0;
     }
 
+    .slider{
+        height: auto;
+    }
+
     .iphone{
         width: 180px;
         height: 364px;
@@ -986,6 +994,8 @@ footer img:hover{
     
     .iphones{
         width: 600px;
+        max-width: 600px;
+        padding: 30px 0;
         align-items: center;
     }
 
@@ -1039,18 +1049,19 @@ footer img:hover{
     .iphone:nth-child(2) .screen-iphone{
         background-image: url(assets/screen-h.png);
         transform: scale(1, -1);
-        top: 35px;
-        left: 11px;
+        top: 45px;
+        left: 8px;
     }
 
     img.slider-2 {
-        left: 300px;
+        height: 400px;
+        left: 345px;
     }
 
     .screen-iphone {
         width: 144px;
-        height: 261px;
-        top: 35px;
+        height: 251px;
+        top: 45px;
         left: 9px;
         background-repeat: no-repeat;
         background-size: contain;
@@ -1127,6 +1138,91 @@ footer img:hover{
         height: 71px;
         border-bottom: none;
     }
+
+    .iphone{
+        width: 88px;
+        height: 178px;
+    }
+    
+    .iphones{
+        width: 477px;
+        max-width: 280px;
+        height: 178px;
+        align-items: center;
+    }
+
+    .shadow-iphone{
+        width: 88px;
+        height: 178px;
+        top: 0;
+        left: 0;
+        background-size: cover;
+    }
+
+    .iphone-corpus{
+        position: absolute;
+        width: 79px;
+        height: 168px;
+        top: 19px;
+        left: -1px;
+    }
+
+    .for-haver-chev:nth-child(1) {
+        left: -30px;
+    }
+
+    .for-haver-chev:nth-child(3) {
+        position: relative;
+        left: 10px;
+    }
+
+    .chev_right {
+        position: relative;
+        top: 84px;
+        left: 0px;
+    }
+    
+    .iphone:nth-child(1) {
+        width: 88px;
+        height: 178px;
+        top: 0;
+        left: 1px;
+    }
+
+    .iphone:nth-child(2) {
+        width: 88px;
+        height: 178px;
+        top: 0px;
+        left: 57px;
+    }
+
+    .iphone:nth-child(2) .iphone-corpus {
+        transform: scale(1, -1);
+        background-position: top;
+        position: relative;
+        top: 18px;
+        left: -1px;
+    }
+
+    .screen-iphone{
+        width: 69px;
+        height: 122px;
+        top: 22px;
+        left: 5px;
+    }
+
+    .iphone:nth-child(2) .screen-iphone{
+        background-image: url(assets/screen-h.png);
+        transform: scale(1, -1);
+        top: 21px;
+        left: 4px;
+    }
+
+    img.slider-2 {
+        height: 100%;
+        left: 155px;
+    }
+
 
     .services .block{
         margin: auto;
