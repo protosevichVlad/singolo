@@ -48,11 +48,11 @@ document.querySelector("body > header > div.menu-bg").addEventListener('click', 
 
 function animation(dir){
     animation_is_running = true;
-    let delay = 30;
+    let delay = 10;
     let i = 0;
     let array_starts = iphones.map(iphone => iphone.style.left);
     setTimeout(function run(){
-        i += 20;
+        i += 10;
         iphones.forEach((iphone, index) => {
             iphone.style.left = parseInt(array_starts[index]) + i * dir + 'px';
         });
@@ -76,7 +76,7 @@ function edit_start_data(){
 function click_on_left_chev(){
     if(animation_is_running) return; 
     if(slider_1){
-        iphones[2].style.left = (start_position_third_iphone - 2* width_iphones) + 'px';
+        iphones[2].style.left = (start_position_third_iphone - 2 * width_iphones) + 'px';
         // slider.style.backgroundColor = '#648bf0';
         slider.classList.add('slider-2-background');
         animation(1);

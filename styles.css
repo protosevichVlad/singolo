@@ -57,7 +57,7 @@ header .container{
     height: 100vh;
     width: 100vw;
     z-index: 11;
-    transition: left 0.3s, top 0.3s;    
+    transition: left 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);     
 }
 
 .menu-bg-open{
@@ -1021,7 +1021,7 @@ footer img:hover{
 
     .for-haver-chev:nth-child(3) {
         position: relative;
-        left: 10px;
+        left: 0px;
     }
     
     .iphone:nth-child(1) {
@@ -1173,13 +1173,13 @@ footer img:hover{
 
     .for-haver-chev:nth-child(3) {
         position: relative;
-        left: 10px;
+        left: 0px;
     }
 
     .chev_right {
         position: relative;
         top: 84px;
-        left: 0px;
+        left: 10px;
     }
     
     .iphone:nth-child(1) {
